@@ -18,7 +18,7 @@ class YetiAndPepe {
 
     update() {
         this.x += this.speed * this.game.clockTick;
-        if (this.x > 1280) {
+        if (this.x > 1068) {
             this.x = 0;
         }
     }
