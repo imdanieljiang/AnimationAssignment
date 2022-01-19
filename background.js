@@ -1,4 +1,4 @@
-class ElNath {
+class ElNathBackground {
     constructor(game, x, y) {
         Object.assign(this, { game, x, y });
 
@@ -8,6 +8,6 @@ class ElNath {
     update() {}
 
     draw(ctx) {
-        ctx.drawImage(this.spritesheet, 0, 0, 1280, 720, 0, 0, 0, 0);
+        ctx.drawImage(this.spritesheet, 0, 0, 1068, 720, 0, 0, 1068, 720);
     }
 }

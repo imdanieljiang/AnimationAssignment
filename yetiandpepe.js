@@ -13,7 +13,7 @@ class YetiAndPepe {
 
         this.x = 0;
         this.y = 0;
-        this.speed = 100;
+        this.speed = 80;
     }
 
     update() {
@@ -24,6 +24,6 @@ class YetiAndPepe {
     }
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, 550);
+        this.animator.drawFrame(this.game.clockTick, ctx, this.x, 488);
     }
 }
