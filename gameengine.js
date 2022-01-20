@@ -26,13 +26,13 @@ class GameEngine {
             },
             debugging: false,
         };
-    };
+    }
 
     init(ctx) {
         this.ctx = ctx;
         this.startInput();
         this.timer = new Timer();
-    };
+    }
 
     start() {
         this.running = true;
@@ -43,12 +43,12 @@ class GameEngine {
             }
         };
         gameLoop();
-    };
+    }
 
     startInput() {
         const getXandY = e => ({
             x: e.clientX - this.ctx.canvas.getBoundingClientRect().left,
-            y: e.clientY - this.ctx.canvas.getBoundingClientRect().top
+            y: e.clientY - this.ctx.canvas.getBoundingClientRect().top,
         });
 
         this.ctx.canvas.addEventListener("mousemove", e => {
@@ -85,13 +85,19 @@ class GameEngine {
             this.rightclick = getXandY(e);
         });
 
-        window.addEventListener("keydown", event => this.keys[event.key] = true);
-        window.addEventListener("keyup", event => this.keys[event.key] = false);
-    };
+        window.addEventListener(
+            "keydown",
+            event => (this.keys[event.key] = true)
+        );
+        window.addEventListener(
+            "keyup",
+            event => (this.keys[event.key] = false)
+        );
+    }
 
     addEntity(entity) {
         this.entities.push(entity);
-    };
+    }
 
     draw() {
         // Clear the whole canvas with transparent color (rgba(0, 0, 0, 0))
@@ -101,7 +107,7 @@ class GameEngine {
         for (let i = this.entities.length - 1; i >= 0; i--) {
             this.entities[i].draw(this.ctx, this);
         }
-    };
+    }
 
     update() {
         let entitiesCount = this.entities.length;
@@ -119,14 +125,13 @@ class GameEngine {
                 this.entities.splice(i, 1);
             }
         }
-    };
+    }
 
     loop() {
         this.clockTick = this.timer.tick();
         this.update();
         this.draw();
-    };
-
-};
+    }
+}
 
 // KV Le was here :)
